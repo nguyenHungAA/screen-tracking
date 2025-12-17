@@ -1,2 +1,29 @@
-<?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-screentracking" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>ScreenTracking</name><js-module name="ScreenTracking" src="www/ScreenTracking.js"><clobbers target="cordova.plugins.ScreenTracking" /></js-module><platform name="android"><config-file parent="/*" target="res/xml/config.xml"><feature name="ScreenTracking"><param name="android-package" value="cordova-plugin-screentracking.ScreenTracking" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml"></config-file><source-file src="src/android/ScreenTracking.java" target-dir="src/com/nguyenhung/ScreenTracking" /></platform></plugin>
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-screentracking"
+    version="0.0.1">
+
+    <name>ScreenTracking</name>
+
+    <js-module src="www/ScreenTracking.js" name="ScreenTracking">
+        <clobbers target="cordova.plugins.screentracking" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="ScreenTracking">
+                <param
+                    name="android-package"
+                    value="com.nguyenhung.screentracking.ScreenTracking" />
+            </feature>
+        </config-file>
+
+        <source-file
+            src="src/android/ScreenTracking.java"
+            target-dir="src/com/nguyenhung/screentracking" />
+
+    </platform>
+</plugin>
