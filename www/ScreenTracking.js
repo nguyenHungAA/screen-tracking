@@ -1,16 +1,22 @@
 var exec = require('cordova/exec');
-var permissions = cordova.plugins.permissions;
 
 exports.coolMethod = function (success, error) {
     exec(success, error, 'ScreenTracking', 'coolMethod', ['hello i am running']);
 };
 
-permissions.requestPermission(permissions.CAMERA, success, error);
+// Check if usage stats permission is granted
+exports.hasUsageStatsPermission = function (success, error) {
+    exec(success, error, 'ScreenTracking', 'hasUsageStatsPermission', []);
+};
 
-function error() {
-    console.warn('Camera permission is not turned on');
-}
+// Request usage stats permission (opens Settings)
+exports.requestUsageStatsPermission = function (success, error) {
+    exec(success, error, 'ScreenTracking', 'requestUsageStatsPermission', []);
+};
 
-function success(status) {
-    if (!status.hasPermission) error();
-}
+// Get app usage statistics
+exports.getUsageStats = function (success, error, timeInterval) {
+    timeInterval = timeInterval || 'INTERVAL_DAILY';
+    exec(success, error, 'ScreenTracking', 'getUsageStats', [timeInterval]);
+};
+

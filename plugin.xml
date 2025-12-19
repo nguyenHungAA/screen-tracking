@@ -21,6 +21,11 @@
             </feature>
         </config-file>
 
+        <!-- Add usage stats permission -->
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+        </config-file>
+
         <source-file
             src="src/android/ScreenTracking.java"
             target-dir="src/com/nguyenhung/screentracking" />
